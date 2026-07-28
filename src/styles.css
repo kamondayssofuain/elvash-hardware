@@ -19,6 +19,15 @@
  */
 
 @theme inline {
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-ink: var(--ink);
+  --color-concrete: var(--concrete);
+  --color-steel: var(--steel);
+  --color-steel-dark: var(--steel-dark);
+  --color-safety: var(--safety);
+  --color-caution: var(--caution);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +35,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
