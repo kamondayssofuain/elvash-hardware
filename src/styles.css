@@ -156,8 +156,57 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
+
+@utility hazard {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--caution) 0 18px,
+    var(--ink) 18px 36px
+  );
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility rivets {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--ink) 35%, transparent);
+  }
+  &::before {
+    left: 8px;
+  }
+  &::after {
+    right: 8px;
+  }
+}
+
