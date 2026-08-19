@@ -80,6 +80,10 @@
   --steel-dark: oklch(0.303 0.026 233);
   --safety: oklch(0.617 0.192 40);
   --caution: oklch(0.797 0.163 79);
+  --lime: oklch(0.78 0.222 134);
+  --lime-deep: oklch(0.62 0.19 134);
+  --crimson: oklch(0.55 0.223 27);
+  --crimson-bright: oklch(0.66 0.226 28);
 
   --background: oklch(0.929 0.011 84);
   --foreground: var(--ink);
