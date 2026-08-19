@@ -3,7 +3,7 @@ export function RadiusDiagram() {
     <svg
       viewBox="0 0 400 400"
       role="img"
-      aria-label="Diagram showing the 5 kilometre free delivery radius around the Elvash Hardware yard"
+      aria-label="Diagram showing the 5 kilometre free delivery radius around the Elvash Hardware depot"
       className="h-auto w-full"
     >
       <defs>
@@ -85,7 +85,7 @@ export function RadiusDiagram() {
         fontSize="11"
         letterSpacing="2"
       >
-        THE YARD
+        THE DEPOT
       </text>
       <text
         x="200"

@@ -4,8 +4,8 @@ export function HazardStripe({ className = "" }: { className?: string }) {
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="eyebrow flex items-center gap-3 text-muted-foreground">
-      <span aria-hidden className="inline-block h-2 w-2 bg-primary" />
+    <p className="eyebrow flex items-center gap-3 text-crimson">
+      <span aria-hidden className="inline-block h-2 w-2 bg-lime-deep" />
       {children}
     </p>
   );
