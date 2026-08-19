@@ -296,7 +296,7 @@ function Index() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-lime">
                 <span aria-hidden className="inline-block h-2 w-2 bg-lime" />
-                Builder&rsquo;s hardware &amp; installation · Nairobi
+                NAIROBI&apos;S . BUILDERS . SOLUION
               </p>
               <h1 className="mt-5 font-display text-4xl uppercase leading-[0.95] text-background sm:text-6xl lg:text-7xl">
                 From foundation
@@ -304,10 +304,10 @@ function Index() {
                 <span className="text-crimson-bright">to finish.</span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-background/80 sm:text-lg">
-                We supply the materials and we fit them. Cement, cable, pipe and
-                steel off the shelf — through to kitchens, wardrobes, doors and
-                finished interiors. Free site visit, free quotation, free
-                delivery within 5km.
+                We supply and fit materials. Cement, cable, pipe and steel off
+                the shelf — through to kitchens, wardrobes, doors and finished
+                interiors. Free site visit, free quotation, free delivery within
+                5km.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -367,7 +367,7 @@ function Index() {
         <section id="depot" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
           <Eyebrow>Bays 01 – 05</Eyebrow>
           <h2 className="mt-4 max-w-2xl font-display text-3xl uppercase leading-tight sm:text-5xl">
-            The Depot
+            THE DEPO
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Five bays. Bring a list or a drawing and we&rsquo;ll pull it
