@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Materials from the yard, installed by our own fitters. Free site visits, free quotations, free delivery within 5km of the depot.",
+          "Materials from the depot, installed by our own fitters. Free site visits, free quotations, free delivery within 5km of the depot.",
       },
       { "script:ld+json": STRUCTURED_DATA },
     ],
@@ -206,7 +206,7 @@ function Header() {
         <a href="#top" className="flex min-w-0 items-center gap-3">
           <span
             aria-hidden
-            className="grid h-11 w-11 shrink-0 place-items-center bg-ink font-display text-xl text-caution"
+            className="grid h-11 w-11 shrink-0 place-items-center bg-ink font-display text-xl text-lime"
           >
             E
           </span>
@@ -294,8 +294,8 @@ function Index() {
           <div className="absolute inset-0 bg-steel-dark/85" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.4fr_1fr] lg:items-end">
             <div>
-              <p className="eyebrow flex items-center gap-3 text-caution">
-                <span aria-hidden className="inline-block h-2 w-2 bg-caution" />
+              <p className="eyebrow flex items-center gap-3 text-lime">
+                <span aria-hidden className="inline-block h-2 w-2 bg-lime" />
                 Builder&rsquo;s hardware &amp; installation · Nairobi
               </p>
               <h1 className="mt-5 font-display text-4xl uppercase leading-[0.95] text-background sm:text-6xl lg:text-7xl">
@@ -318,19 +318,19 @@ function Index() {
                 </a>
                 <a
                   href="#depot"
-                  className="inline-flex items-center gap-2 border-2 border-background/40 px-6 py-4 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:border-caution hover:text-caution"
+                  className="inline-flex items-center gap-2 border-2 border-background/40 px-6 py-4 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:border-lime hover:text-lime"
                 >
                   See what we stock
                 </a>
               </div>
             </div>
 
-            <div className="rivets border-2 border-caution/40 bg-ink/50 p-6">
-              <p className="eyebrow text-caution">No charge</p>
+            <div className="rivets border-2 border-lime/40 bg-ink/50 p-6">
+              <p className="eyebrow text-lime">No charge</p>
               <ul className="mt-4 divide-y divide-background/15">
                 {PERKS.map((p) => (
                   <li key={p.title} className="flex items-start gap-3 py-3">
-                    <p.icon className="mt-0.5 h-5 w-5 shrink-0 text-caution" />
+                    <p.icon className="mt-0.5 h-5 w-5 shrink-0 text-lime" />
                     <span>
                       <span className="block font-mono text-sm uppercase tracking-wider text-background">
                         {p.title}
@@ -389,7 +389,7 @@ function Index() {
                     height={600}
                     className="h-full w-full object-cover"
                   />
-                  <span className="absolute left-0 top-0 bg-ink px-3 py-2 font-mono text-xs tracking-widest text-caution">
+                  <span className="absolute left-0 top-0 bg-ink px-3 py-2 font-mono text-xs tracking-widest text-lime">
                     BAY {bay.no}
                   </span>
                 </div>
@@ -454,7 +454,7 @@ function Index() {
               </div>
 
               <div className="bg-steel-dark p-6 text-background sm:p-8">
-                <p className="eyebrow text-caution">How it works</p>
+                <p className="eyebrow text-lime">How it works</p>
                 <ol className="mt-6 space-y-6">
                   {[
                     {
@@ -474,7 +474,7 @@ function Index() {
                     },
                   ].map((s, idx) => (
                     <li key={s.t} className="flex gap-4">
-                      <s.icon className="mt-1 h-5 w-5 shrink-0 text-caution" />
+                      <s.icon className="mt-1 h-5 w-5 shrink-0 text-lime" />
                       <div className="min-w-0">
                         <p className="font-mono text-sm uppercase tracking-widest">
                           {String(idx + 1).padStart(2, "0")} · {s.t}
@@ -510,7 +510,7 @@ function Index() {
                 <h3 className="mt-3 font-display text-lg uppercase leading-tight">
                   {c.title}
                 </h3>
-                <span aria-hidden className="mt-4 h-1 w-10 bg-caution" />
+                <span aria-hidden className="mt-4 h-1 w-10 bg-lime" />
                 <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
               </article>
             ))}
@@ -569,8 +569,8 @@ function Index() {
         {/* CONTACT */}
         <section id="contact" className="bg-steel-dark text-background">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
-            <p className="eyebrow flex items-center gap-3 text-caution">
-              <span aria-hidden className="inline-block h-2 w-2 bg-caution" />
+            <p className="eyebrow flex items-center gap-3 text-lime">
+              <span aria-hidden className="inline-block h-2 w-2 bg-lime" />
               Get in touch
             </p>
             <h2 className="mt-4 font-display text-3xl uppercase leading-tight sm:text-5xl">
@@ -582,9 +582,9 @@ function Index() {
                 <li className="bg-steel-dark">
                   <a
                     href={`tel:${PHONE}`}
-                    className="flex items-center gap-4 py-5 transition-colors hover:text-caution"
+                    className="flex items-center gap-4 py-5 transition-colors hover:text-lime"
                   >
-                    <Phone className="h-5 w-5 shrink-0 text-caution" />
+                    <Phone className="h-5 w-5 shrink-0 text-lime" />
                     <span className="min-w-0">
                       <span className="eyebrow block text-background/60">
                         Phone
@@ -598,9 +598,9 @@ function Index() {
                 <li className="bg-steel-dark">
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="flex items-center gap-4 py-5 transition-colors hover:text-caution"
+                    className="flex items-center gap-4 py-5 transition-colors hover:text-lime"
                   >
-                    <Mail className="h-5 w-5 shrink-0 text-caution" />
+                    <Mail className="h-5 w-5 shrink-0 text-lime" />
                     <span className="min-w-0">
                       <span className="eyebrow block text-background/60">
                         Email
@@ -612,7 +612,7 @@ function Index() {
                   </a>
                 </li>
                 <li className="flex items-center gap-4 bg-steel-dark py-5">
-                  <MapPin className="h-5 w-5 shrink-0 text-caution" />
+                  <MapPin className="h-5 w-5 shrink-0 text-lime" />
                   <span className="min-w-0">
                     <span className="eyebrow block text-background/60">
                       Postal address
@@ -625,7 +625,7 @@ function Index() {
               </ul>
 
               <div className="rivets border-2 border-caution/50 bg-ink/40 p-6 sm:p-8">
-                <h3 className="font-display text-2xl uppercase leading-tight text-caution">
+                <h3 className="font-display text-2xl uppercase leading-tight text-lime">
                   Ready for a free quote?
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-background/80">
@@ -642,7 +642,7 @@ function Index() {
                   </a>
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="inline-flex items-center gap-2 border-2 border-background/40 px-5 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:border-caution hover:text-caution"
+                    className="inline-flex items-center gap-2 border-2 border-background/40 px-5 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:border-lime hover:text-lime"
                   >
                     <Mail className="h-4 w-4" /> Email us
                   </a>
