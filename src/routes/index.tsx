@@ -22,6 +22,9 @@ import baySewer from "@/assets/bay-sewer.jpg";
 import bayPlumbing from "@/assets/bay-plumbing.jpg";
 import bayGeneral from "@/assets/bay-general.jpg";
 
+const PHONE = "+254704025070";
+const PHONE_DISPLAY = "0704 025 070";
+const EMAIL = "elvash_contractors@gmail.com";
 const SITE_URL = "https://id-preview--8ea8290a-a07d-4229-8fb9-475a6a7a19fa.lovable.app";
 
 const STRUCTURED_DATA = {
@@ -92,10 +95,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const PHONE = "+254704025070";
-const PHONE_DISPLAY = "0704 025 070";
-const EMAIL = "elvash_contractors@gmail.com";
 
 const NAV = [
   { label: "The Yard", href: "#yard" },
