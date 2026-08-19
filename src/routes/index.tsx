@@ -22,6 +22,54 @@ import baySewer from "@/assets/bay-sewer.jpg";
 import bayPlumbing from "@/assets/bay-plumbing.jpg";
 import bayGeneral from "@/assets/bay-general.jpg";
 
+const PHONE = "+254704025070";
+const PHONE_DISPLAY = "0704 025 070";
+const EMAIL = "elvash_contractors@gmail.com";
+const SITE_URL = "https://id-preview--8ea8290a-a07d-4229-8fb9-475a6a7a19fa.lovable.app";
+
+const STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Elvash Hardware",
+      url: SITE_URL,
+      telephone: PHONE,
+      email: EMAIL,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "P.O. Box 00344-00200",
+        addressLocality: "Nairobi",
+        addressCountry: "KE",
+      },
+      areaServed: "Nairobi, Kenya",
+      description:
+        "Nairobi supplier of building, electrical, sewer, plumbing and general hardware. We also fit kitchens, wardrobes and doors.",
+    },
+    {
+      "@type": ["LocalBusiness", "HardwareStore"],
+      "@id": `${SITE_URL}/#localbusiness`,
+      name: "Elvash Hardware",
+      url: SITE_URL,
+      telephone: PHONE,
+      email: EMAIL,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "P.O. Box 00344-00200",
+        addressLocality: "Nairobi",
+        addressCountry: "KE",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Nairobi",
+      },
+      description:
+        "Builder's hardware supplier and installer based in Nairobi, Kenya. Free site visits, free quotations and free delivery within 5km.",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -31,6 +79,8 @@ export const Route = createFileRoute("/")({
         content:
           "Nairobi supplier of building, electrical, sewer, plumbing and general hardware. We also fit kitchens, wardrobes and doors. Free site visit, free quote, free delivery within 5km.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:title",
         content: "Elvash Hardware — Building Materials & Fitting, Nairobi",
@@ -40,14 +90,11 @@ export const Route = createFileRoute("/")({
         content:
           "Materials from the yard, installed by our own fitters. Free site visits, free quotations, free delivery within 5km of the yard.",
       },
+      { "script:ld+json": STRUCTURED_DATA },
     ],
   }),
   component: Index,
 });
-
-const PHONE = "+254704025070";
-const PHONE_DISPLAY = "0704 025 070";
-const EMAIL = "elvash_contractors@gmail.com";
 
 const NAV = [
   { label: "The Yard", href: "#yard" },
