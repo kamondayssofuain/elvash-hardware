@@ -28,6 +28,10 @@
   --color-steel-dark: var(--steel-dark);
   --color-safety: var(--safety);
   --color-caution: var(--caution);
+  --color-lime: var(--lime);
+  --color-lime-deep: var(--lime-deep);
+  --color-crimson: var(--crimson);
+  --color-crimson-bright: var(--crimson-bright);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
