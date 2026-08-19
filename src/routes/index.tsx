@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { label: "The Depot", href: "#yard" },
+  { label: "The Depot", href: "#depot" },
   { label: "Supply & Fit", href: "#supply-fit" },
   { label: "Interiors", href: "#interiors" },
   { label: "Why Us", href: "#why" },
@@ -301,7 +301,7 @@ function Index() {
               <h1 className="mt-5 font-display text-4xl uppercase leading-[0.95] text-background sm:text-6xl lg:text-7xl">
                 From foundation
                 <br />
-                to finish.
+                <span className="text-crimson-bright">to finish.</span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-background/80 sm:text-lg">
                 We supply the materials and we fit them. Cement, cable, pipe and
@@ -351,8 +351,8 @@ function Index() {
           <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-3">
             {PERKS.map((p) => (
               <div key={p.title} className="bg-card px-5 py-7 sm:px-8">
-                <p.icon className="h-6 w-6 text-primary" />
-                <h2 className="mt-3 font-display text-lg uppercase">
+                <p.icon className="h-6 w-6 text-lime-deep" />
+                <h2 className="mt-3 font-display text-lg uppercase text-crimson">
                   {p.title}
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
@@ -529,7 +529,7 @@ function Index() {
               </h2>
               <dl className="mt-8 divide-y-2 divide-border border-y-2 border-border">
                 <div className="py-6">
-                  <dt className="font-display text-lg uppercase">
+                  <dt className="font-display text-lg uppercase text-crimson">
                     Free site visits
                   </dt>
                   <dd className="mt-2 text-sm text-muted-foreground">
@@ -539,7 +539,7 @@ function Index() {
                   </dd>
                 </div>
                 <div className="py-6">
-                  <dt className="font-display text-lg uppercase">
+                  <dt className="font-display text-lg uppercase text-crimson">
                     Free quotation
                   </dt>
                   <dd className="mt-2 text-sm text-muted-foreground">
@@ -548,7 +548,7 @@ function Index() {
                   </dd>
                 </div>
                 <div className="py-6">
-                  <dt className="font-display text-lg uppercase">
+                  <dt className="font-display text-lg uppercase text-crimson">
                     Free delivery within 5km
                   </dt>
                   <dd className="mt-2 text-sm text-muted-foreground">
