@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Materials from the yard, installed by our own fitters. Free site visits, free quotations, free delivery within 5km of the yard.",
+          "Materials from the yard, installed by our own fitters. Free site visits, free quotations, free delivery within 5km of the depot.",
       },
       { "script:ld+json": STRUCTURED_DATA },
     ],
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { label: "The Yard", href: "#yard" },
+  { label: "The Depot", href: "#yard" },
   { label: "Supply & Fit", href: "#supply-fit" },
   { label: "Interiors", href: "#interiors" },
   { label: "Why Us", href: "#why" },
@@ -193,7 +193,7 @@ const PERKS = [
   {
     icon: Truck,
     title: "Free delivery within 5km",
-    text: "Anything within 5km of the yard lands at no extra cost.",
+    text: "Anything within 5km of the depot lands at no extra cost.",
   },
 ];
 
@@ -286,7 +286,7 @@ function Index() {
         <section className="relative overflow-hidden border-b-2 border-ink/15">
           <img
             src={heroYard}
-            alt="Elvash Hardware builder's yard with stacked building materials"
+            alt="Elvash Hardware builder's depot with stacked building materials"
             width={1600}
             height={1100}
             className="absolute inset-0 h-full w-full object-cover"
@@ -305,7 +305,7 @@ function Index() {
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-background/80 sm:text-lg">
                 We supply the materials and we fit them. Cement, cable, pipe and
-                steel off the yard — through to kitchens, wardrobes, doors and
+                steel off the shelf — through to kitchens, wardrobes, doors and
                 finished interiors. Free site visit, free quotation, free
                 delivery within 5km.
               </p>
@@ -317,7 +317,7 @@ function Index() {
                   Request a free quote <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="#yard"
+                  href="#depot"
                   className="inline-flex items-center gap-2 border-2 border-background/40 px-6 py-4 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:border-caution hover:text-caution"
                 >
                   See what we stock
@@ -363,11 +363,11 @@ function Index() {
 
         <HazardStripe />
 
-        {/* THE YARD */}
-        <section id="yard" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+        {/* THE DEPOT */}
+        <section id="depot" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
           <Eyebrow>Bays 01 – 05</Eyebrow>
           <h2 className="mt-4 max-w-2xl font-display text-3xl uppercase leading-tight sm:text-5xl">
-            The Yard
+            The Depot
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Five bays. Bring a list or a drawing and we&rsquo;ll pull it
@@ -552,7 +552,7 @@ function Index() {
                     Free delivery within 5km
                   </dt>
                   <dd className="mt-2 text-sm text-muted-foreground">
-                    Any order going to a site within 5km of our yard is
+                    Any order going to a site within 5km of our depot is
                     delivered at no extra charge. Further out, we&rsquo;ll price
                     the transport with the quote.
                   </dd>
