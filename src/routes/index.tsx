@@ -466,7 +466,7 @@ function Index() {
                           src={f.img}
                           alt={f.title}
                           loading="lazy"
-                          className="mt-4 h-44 w-full border-2 border-ink/15 object-cover sm:h-56"
+                          className="mt-4 aspect-[4/3] w-full border-2 border-ink/15 object-cover object-center"
                         />
                       )}
                     </div>
@@ -538,7 +538,7 @@ function Index() {
                     src={c.img}
                     alt={c.title}
                     loading="lazy"
-                    className="mt-5 h-40 w-full border-2 border-ink/15 object-cover"
+                    className="mt-5 aspect-[4/3] w-full border-2 border-ink/15 object-cover object-center"
                   />
                 )}
               </article>
