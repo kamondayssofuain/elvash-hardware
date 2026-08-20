@@ -21,6 +21,9 @@ import bayElectrical from "@/assets/bay-electrical.jpg";
 import baySewer from "@/assets/bay-sewer.jpg";
 import bayPlumbing from "@/assets/bay-plumbing.jpg";
 import bayGeneral from "@/assets/bay-general.jpg";
+import fitWardrobes from "@/assets/fit-wardrobes.jpg";
+import interiorPartitioning from "@/assets/interior-partitioning.jpg";
+import interiorTiling from "@/assets/interior-tiling.jpg";
 
 const PHONE = "+254704025070";
 const PHONE_DISPLAY = "0704 025 070";
