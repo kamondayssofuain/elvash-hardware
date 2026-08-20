@@ -526,6 +526,14 @@ function Index() {
                 </h3>
                 <span aria-hidden className="mt-4 h-1 w-10 bg-lime" />
                 <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
+                {c.img && (
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    loading="lazy"
+                    className="mt-5 h-40 w-full border-2 border-ink/15 object-cover"
+                  />
+                )}
               </article>
             ))}
           </div>
