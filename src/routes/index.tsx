@@ -21,6 +21,9 @@ import bayElectrical from "@/assets/bay-electrical.jpg";
 import baySewer from "@/assets/bay-sewer.jpg";
 import bayPlumbing from "@/assets/bay-plumbing.jpg";
 import bayGeneral from "@/assets/bay-general.jpg";
+import fitWardrobes from "@/assets/fit-wardrobes.jpg";
+import interiorPartitioning from "@/assets/interior-partitioning.jpg";
+import interiorTiling from "@/assets/interior-tiling.jpg";
 
 const PHONE = "+254704025070";
 const PHONE_DISPLAY = "0704 025 070";
@@ -142,7 +145,7 @@ const BAYS = [
   },
 ];
 
-const FIT = [
+const FIT: { no: string; title: string; text: string; img?: string }[] = [
   {
     no: "A",
     title: "Kitchen cabinets",
@@ -152,6 +155,7 @@ const FIT = [
     no: "B",
     title: "Wardrobes",
     text: "Fitted wardrobes sized for the room. Hanging rails, shelving and sliding or hinged doors.",
+    img: fitWardrobes,
   },
   {
     no: "C",
@@ -160,10 +164,11 @@ const FIT = [
   },
 ];
 
-const INTERIORS = [
+const INTERIORS: { title: string; text: string; img?: string }[] = [
   {
     title: "Office partitioning",
     text: "Divide space into working rooms without altering the shell.",
+    img: interiorPartitioning,
   },
   {
     title: "Paint works",
@@ -176,6 +181,7 @@ const INTERIORS = [
   {
     title: "Floor tiling",
     text: "Tile supply and laying for floors and wet areas.",
+    img: interiorTiling,
   },
 ];
 
@@ -448,6 +454,14 @@ function Index() {
                       <p className="mt-2 text-sm text-muted-foreground">
                         {f.text}
                       </p>
+                      {f.img && (
+                        <img
+                          src={f.img}
+                          alt={f.title}
+                          loading="lazy"
+                          className="mt-4 h-44 w-full border-2 border-ink/15 object-cover sm:h-56"
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
@@ -512,6 +526,14 @@ function Index() {
                 </h3>
                 <span aria-hidden className="mt-4 h-1 w-10 bg-lime" />
                 <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
+                {c.img && (
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    loading="lazy"
+                    className="mt-5 h-40 w-full border-2 border-ink/15 object-cover"
+                  />
+                )}
               </article>
             ))}
           </div>
