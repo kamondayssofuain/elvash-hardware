@@ -150,6 +150,7 @@ const FIT: { no: string; title: string; text: string; img?: string }[] = [
     no: "A",
     title: "Kitchen cabinets",
     text: "Built and installed to your exact kitchen measurements. Carcass, doors, worktop cut-outs — fitted on site.",
+    img: fitKitchenAsset.url,
   },
   {
     no: "B",
@@ -161,6 +162,7 @@ const FIT: { no: string; title: string; text: string; img?: string }[] = [
     no: "C",
     title: "Doors, frames & architraves",
     text: "Supplied and hung. Frames plumbed, ironmongery fitted, trim finished to match.",
+    img: fitDoorsAsset.url,
   },
 ];
 
@@ -173,7 +175,9 @@ const INTERIORS: { title: string; text: string; img?: string }[] = [
   {
     title: "Paint works",
     text: "Interior and exterior painting, prep through to top coat.",
+    img: interiorPaintAsset.url,
   },
+
   {
     title: "Gypsum designing",
     text: "Ceiling designs, coves and bulkheads cast on site.",
