@@ -400,7 +400,7 @@ function Index() {
                     loading="lazy"
                     width={800}
                     height={600}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-center"
                   />
                   <span className="absolute left-0 top-0 bg-ink px-3 py-2 font-mono text-xs tracking-widest text-lime">
                     BAY {bay.no}
