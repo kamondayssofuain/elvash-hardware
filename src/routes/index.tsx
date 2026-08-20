@@ -454,6 +454,14 @@ function Index() {
                       <p className="mt-2 text-sm text-muted-foreground">
                         {f.text}
                       </p>
+                      {f.img && (
+                        <img
+                          src={f.img}
+                          alt={f.title}
+                          loading="lazy"
+                          className="mt-4 h-44 w-full border-2 border-ink/15 object-cover sm:h-56"
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
