@@ -145,7 +145,7 @@ const BAYS = [
   },
 ];
 
-const FIT = [
+const FIT: { no: string; title: string; text: string; img?: string }[] = [
   {
     no: "A",
     title: "Kitchen cabinets",
@@ -155,6 +155,7 @@ const FIT = [
     no: "B",
     title: "Wardrobes",
     text: "Fitted wardrobes sized for the room. Hanging rails, shelving and sliding or hinged doors.",
+    img: fitWardrobes,
   },
   {
     no: "C",
@@ -163,10 +164,11 @@ const FIT = [
   },
 ];
 
-const INTERIORS = [
+const INTERIORS: { title: string; text: string; img?: string }[] = [
   {
     title: "Office partitioning",
     text: "Divide space into working rooms without altering the shell.",
+    img: interiorPartitioning,
   },
   {
     title: "Paint works",
@@ -179,6 +181,7 @@ const INTERIORS = [
   {
     title: "Floor tiling",
     text: "Tile supply and laying for floors and wet areas.",
+    img: interiorTiling,
   },
 ];
 
