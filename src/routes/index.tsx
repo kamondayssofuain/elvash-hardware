@@ -181,15 +181,19 @@ const INTERIORS: { title: string; text: string; img?: string }[] = [
     text: "Interior and exterior painting, prep through to top coat.",
     img: interiorPaintAsset.url,
   },
-
   {
     title: "Gypsum designing",
     text: "Ceiling designs, coves and bulkheads cast on site.",
   },
   {
+    title: "Wall tiling",
+    text: "Marble, ceramic and porcelain wall finishes for bathrooms and feature walls.",
+    img: interiorWallTilingAsset.url,
+  },
+  {
     title: "Floor tiling",
     text: "Tile supply and laying for floors and wet areas.",
-    img: interiorTiling,
+    img: interiorTilingJobAsset.url,
   },
 ];
 
