@@ -15,6 +15,7 @@ import {
 
 import { HazardStripe, Eyebrow } from "@/components/site/Hazard";
 import { RadiusDiagram } from "@/components/site/RadiusDiagram";
+import logoAsset from "@/assets/logo.png.asset.json";
 import heroYard from "@/assets/hero-yard.jpg";
 import bayBuilding from "@/assets/bay-building.jpg";
 import bayElectrical from "@/assets/bay-electrical.jpg";
@@ -222,12 +223,11 @@ function Header() {
     <header className="sticky top-0 z-50 border-b-2 border-ink/15 bg-background/95 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <span
-            aria-hidden
-            className="grid h-11 w-11 shrink-0 place-items-center bg-ink font-display text-xl text-lime"
-          >
-            E
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="Elvash Hardware"
+            className="h-11 w-11 shrink-0 object-contain"
+          />
           <span className="min-w-0">
             <span className="block truncate font-display text-base leading-tight sm:text-lg">
               Elvash Hardware
