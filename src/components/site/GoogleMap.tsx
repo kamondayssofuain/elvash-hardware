@@ -7,9 +7,10 @@ const RADIUS_KM = 5;
 declare global {
   interface Window {
     initElvashMap?: () => void;
-    google?: typeof google;
+    google?: any;
   }
 }
+
 
 export function GoogleMap() {
   const ref = useRef<HTMLDivElement>(null);
