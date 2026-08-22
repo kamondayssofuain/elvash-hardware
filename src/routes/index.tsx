@@ -11,6 +11,7 @@ import {
   Hammer,
   Truck,
   ArrowRight,
+  MessageCircle,
 } from "lucide-react";
 
 import { HazardStripe, Eyebrow } from "@/components/site/Hazard";
