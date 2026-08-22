@@ -295,6 +295,30 @@ function Header() {
   );
 }
 
+function MobileCtaBar() {
+  const whatsappNumber = PHONE.replace(/\+/g, "");
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 border-t-2 border-ink/15 bg-ink md:hidden">
+      <a
+        href={`tel:${PHONE}`}
+        className="flex items-center justify-center gap-2 bg-lime py-4 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:bg-lime/90"
+      >
+        <Phone className="h-4 w-4" />
+        Call
+      </a>
+      <a
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 bg-crimson py-4 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:bg-crimson/90"
+      >
+        <MessageCircle className="h-4 w-4" />
+        WhatsApp
+      </a>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div id="top" className="min-h-screen bg-background">
