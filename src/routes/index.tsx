@@ -30,9 +30,9 @@ import fitKitchenAsset from "@/assets/fit-kitchen.jpg.asset.json";
 import fitDoorsAsset from "@/assets/fit-doors.jpg.asset.json";
 import interiorPaintAsset from "@/assets/interior-paint.jpg.asset.json";
 
-const PHONE = "+254704025070";
+export const PHONE = "+254704025070";
 const PHONE_DISPLAY = "0704 025 070";
-const EMAIL = "elvash_contractors@gmail.com";
+export const EMAIL = "elvash_contractors@gmail.com";
 const SITE_URL = "https://id-preview--8ea8290a-a07d-4229-8fb9-475a6a7a19fa.lovable.app";
 
 const STRUCTURED_DATA = {
