@@ -1,23 +1,27 @@
-Enhance LocalBusiness structured data for Nairobi local SEO
+Add sticky mobile WhatsApp + Call bar and fix runtime error
 
-## Current state
-`src/routes/index.tsx` already injects a `LocalBusiness` + `HardwareStore` JSON-LD graph with address, phone, email and a basic `areaServed: { City: Nairobi }`. The goal is to strengthen it for local search visibility.
+## Goal
+Add a sticky bottom call-to-action bar on mobile with one-tap Call and WhatsApp buttons, and fix the current runtime error that blocks the preview.
 
-## Proposed changes
-1. Add a `logo` property to both `Organization` and `LocalBusiness` pointing to the uploaded EL logo asset.
-2. Add `image` to `LocalBusiness` using the same logo asset.
-3. Expand `areaServed` from a simple `City` to a `GeoCircle` centred on the depot coordinates (`-1.3002, 36.85`) with a `5km` radius, matching the free-delivery promise.
-4. Add `geo` coordinates to the `PostalAddress` via a separate `Place`/`GeoCoordinates` reference or `geo` property on `LocalBusiness`.
-5. Add `openingHoursSpecification` for standard trade hours (e.g., Mon–Sat 08:00–18:00, Sun closed) if confirmed; otherwise leave it out.
-6. Add `priceRange` (e.g., "$$") and `paymentAccepted` (cash, M-Pesa, bank transfer) if appropriate.
-7. Add `hasMap` linking to a Google Maps URL for the depot location.
-8. Keep the existing `Organization` graph entry and cross-reference both via `@id`.
+## Prerequisite fix
+The preview currently throws:
+`Uncaught SyntaxError: The requested module '/src/routes/index.tsx?tsr-shared=1' does not provide an export named 'EMAIL'`
 
-## Verification
-- Run `bun run build` to ensure no TypeScript or build errors.
-- Use a browser/curl to confirm the JSON-LD is present in the rendered HTML `<head>`.
-- Validate the output with Google's Rich Results Test schema expectations (manual check).
+This happens because `EMAIL` (and likely `PHONE`) are declared as non-exported constants in `src/routes/index.tsx`, but a TanStack shared chunk is trying to import them. Fix: change `const EMAIL` and `const PHONE` to `export const EMAIL` and `export const PHONE`.
+
+## Steps
+1. In `src/routes/index.tsx`, export `PHONE` and `EMAIL` constants so the shared module resolution succeeds.
+2. Add a sticky bottom mobile CTA bar component inside `src/routes/index.tsx` (or a new `src/components/site/MobileCtaBar.tsx`) that:
+   - Is visible only below the `md` breakpoint (`md:hidden`).
+   - Has a "Call" button using `tel:${PHONE}` with a Phone icon.
+   - Has a "WhatsApp" button using `https://wa.me/${PHONE}` (with the number in international format, no +) and a WhatsApp/chat icon.
+   - Uses the existing industrial color tokens (lime/crimson or safety orange) for high contrast.
+   - Sits above existing content with safe bottom padding (`pb-safe` / `bottom-0`).
+3. Ensure the bar does not overlap the footer or contact form by adding enough bottom padding to the main page wrapper on mobile.
+4. Run `bun run build` to confirm the runtime error is gone and the new component compiles.
+5. Verify in the mobile preview that both buttons trigger the correct actions.
 
 ## Notes
-- No visual UI changes; this is a head/SEO-only update.
-- All contact values (phone, email, P.O. Box, Nairobi, KE) will be reused from existing constants.
+- The WhatsApp number will reuse the existing business phone `+254704025070`, formatted as `254704025070` for `wa.me`.
+- No desktop layout changes; the bar is mobile-only.
+- This plan supersedes the previous structured-data plan because `LocalBusiness` JSON-LD is already present in `src/routes/index.tsx`.
