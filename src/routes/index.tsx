@@ -188,7 +188,9 @@ const INTERIORS: { title: string; text: string; img?: string }[] = [
   {
     title: "Gypsum designing",
     text: "Ceiling designs, coves and bulkheads cast on site.",
+    img: gypsumDesignAsset.url,
   },
+
   {
     title: "Wall tiling",
     text: "Marble, ceramic and porcelain wall finishes for bathrooms and feature walls.",
