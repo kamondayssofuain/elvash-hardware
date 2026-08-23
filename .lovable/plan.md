@@ -1,32 +1,30 @@
-Add desktop Call and WhatsApp buttons to the header and contact section
+# Desktop Call & WhatsApp CTAs + Lead Click Tracking
 
-## Goal
-Make it easy for desktop visitors to call or start a WhatsApp chat with the same business number (+254 704 025 070), while keeping the existing mobile-only sticky CTA bar unchanged.
+## 1. Desktop-friendly contact buttons
 
-## Steps
-1. In `src/routes/index.tsx`, add a desktop WhatsApp button in the `Header` component, next to the existing "Call" button.
-   - Use the `MessageCircle` icon already imported from `lucide-react`.
-   - Link to `https://wa.me/254704025070` with `target="_blank"` and `rel="noopener noreferrer"`.
-   - Hide it on mobile (`hidden md:inline-flex`) so it complements the sticky bottom bar instead of duplicating it.
-   - Use the same high-contrast industrial styling as the existing Call button (lime/crimson or safety/concrete tokens).
-   - Ensure a minimum 44 px touch target and visible focus ring.
+- Header (desktop): keep the existing "Call 0704 025 070" button and add a WhatsApp button next to it, both hidden on mobile where the sticky bar already covers it.
+- Contact section "Ready for a free quote?" box: add a WhatsApp button alongside the existing Call and Email buttons.
+- All links use +254 704 025 070: `tel:+254704025070` and `https://wa.me/254704025070?text=...` with a prefilled message ("Hi Elvash Hardware, I'd like a quote for ...").
+- Sizing/accessibility: minimum 44px tap height, generous horizontal padding, visible hover and keyboard focus rings, `aria-label` on icon-only variants, `rel="noopener noreferrer"` and `target="_blank"` on WhatsApp links.
 
-2. In the `Contact` section, add a WhatsApp CTA alongside the existing Call and Email buttons.
-   - Place it as a third button in the "Ready for a free quote?" box.
-   - Label it clearly: "WhatsApp" with the `MessageCircle` icon.
-   - Link to `https://wa.me/254704025070`.
-   - Keep the existing Call and Email buttons.
+## 2. Lead click tracking (Lovable Cloud)
 
-3. Verify click/tap friendliness:
-   - Buttons have at least 44 × 44 px hit area.
-   - Clear hover/focus states.
-   - Adequate gap between buttons.
+- Enable Lovable Cloud (built-in database) for this project.
+- New table `lead_clicks`: id, channel (`call` | `whatsapp`), source (which button: `header`, `contact_box`, `mobile_bar`, `hero`), service (optional — e.g. the section/category context), page path, referrer, user agent, created_at.
+- Public site visitors are anonymous, so writes go through a server function that validates the payload and inserts the row; the table itself allows no direct public reads or writes.
+- A small `trackLead()` helper fires on every Call/WhatsApp click (including the existing mobile sticky bar and any hero/section CTAs) and never blocks navigation — the tel:/wa.me link opens regardless of whether logging succeeds.
 
-4. Run `bun run build` to confirm no TypeScript or runtime errors.
+Reviewing the data: the rows can be queried from the backend view. If you also want an in-app dashboard page showing clicks by channel/source, say so and I will add it (it would need a login to stay private).
 
-5. Verify in the desktop preview that both header buttons open the correct actions (Call via `tel:` and WhatsApp via `wa.me`).
+## 3. Overlap, spacing and z-index audit
 
-## Notes
-- The WhatsApp number reuses the existing exported `PHONE` constant, formatted as `254704025070` for `wa.me`.
-- No mobile layout changes; mobile visitors keep the sticky bottom Call/WhatsApp bar.
-- No changes to structured data or SEO metadata are required.
+- Sticky mobile bar keeps a high z-index above page content but below the mobile menu overlay; the page already reserves bottom padding so the footer is never covered — verify on 360px, 414px and tablet widths.
+- Verify header buttons do not wrap or collide with nav links at 768–1024px.
+- Verify the contact box buttons wrap cleanly on narrow screens with consistent gaps.
+- Check with a real browser pass at mobile, tablet and desktop widths and confirm each CTA is clickable and correctly targeted.
+
+## Technical notes
+
+- `src/routes/index.tsx`: header and contact-section markup, shared `WHATSAPP_URL` constant derived from `PHONE`.
+- New `src/lib/leads.functions.ts` with a `createServerFn` insert handler using a server-side client; input validated with Zod and channel/source constrained to known values.
+- Migration creates the table with explicit GRANTs, RLS enabled, and no anon policies (inserts happen server-side only).
