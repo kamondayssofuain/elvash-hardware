@@ -723,6 +723,8 @@ function Index() {
           </p>
         </div>
       </footer>
+
+      <MobileCtaBar />
     </div>
   );
 }
