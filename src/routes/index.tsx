@@ -321,7 +321,7 @@ function MobileCtaBar() {
 
 function Index() {
   return (
-    <div id="top" className="min-h-screen bg-background">
+    <div id="top" className="min-h-screen bg-background pb-[72px] md:pb-0">
       <Header />
 
       <main>
