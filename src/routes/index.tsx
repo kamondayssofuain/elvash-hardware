@@ -30,6 +30,8 @@ import interiorWallTilingAsset from "@/assets/interior-wall-tiling.jpg.asset.jso
 import fitKitchenAsset from "@/assets/fit-kitchen.jpg.asset.json";
 import fitDoorsAsset from "@/assets/fit-doors.jpg.asset.json";
 import interiorPaintAsset from "@/assets/interior-paint.jpg.asset.json";
+import gypsumDesignAsset from "@/assets/gypsum-design.png.asset.json";
+
 
 export const PHONE = "+254704025070";
 const PHONE_DISPLAY = "0704 025 070";
