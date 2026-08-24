@@ -1,32 +1,21 @@
-Add desktop Call and WhatsApp buttons to the header and contact section
+# Add Google Maps integration
 
 ## Goal
-Make it easy for desktop visitors to call or start a WhatsApp chat with the same business number (+254 704 025 070), while keeping the existing mobile-only sticky CTA bar unchanged.
+Wire the existing `GoogleMap` component into the Elvash Hardware homepage so visitors see an interactive map of the depot location and 5km free-delivery radius, then publish the site.
+
+## Current state
+- `src/components/site/GoogleMap.tsx` already exists and loads the Maps JS API using the Lovable-managed browser key.
+- The Google Maps Platform connector is already linked to the project.
+- The map is not yet rendered on the page; the "Why Elvash" section currently shows the static `RadiusDiagram`.
+- Build is blocked by missing `@supabase/supabase-js` in `package.json`, which the auto-generated Supabase client files import.
 
 ## Steps
-1. In `src/routes/index.tsx`, add a desktop WhatsApp button in the `Header` component, next to the existing "Call" button.
-   - Use the `MessageCircle` icon already imported from `lucide-react`.
-   - Link to `https://wa.me/254704025070` with `target="_blank"` and `rel="noopener noreferrer"`.
-   - Hide it on mobile (`hidden md:inline-flex`) so it complements the sticky bottom bar instead of duplicating it.
-   - Use the same high-contrast industrial styling as the existing Call button (lime/crimson or safety/concrete tokens).
-   - Ensure a minimum 44 px touch target and visible focus ring.
+1. **Fix build blocker** — install the missing `@supabase/supabase-js` dependency so the auto-generated Supabase integration files compile.
+2. **Wire the map into the page** — import `GoogleMap` and `ClientOnly` in `src/routes/index.tsx` and replace the static `RadiusDiagram` in the "Why Elvash" section with the interactive map. Wrap it in `ClientOnly` so it only renders in the browser and avoids SSR/hydration issues.
+3. **Polish** — keep the 5km-radius circle and depot marker already defined in `GoogleMap.tsx`, and ensure the container height works in the new layout.
+4. **Verify** — run `bun run build` to confirm no TypeScript or build errors.
+5. **Publish** — publish the site once the build is green.
 
-2. In the `Contact` section, add a WhatsApp CTA alongside the existing Call and Email buttons.
-   - Place it as a third button in the "Ready for a free quote?" box.
-   - Label it clearly: "WhatsApp" with the `MessageCircle` icon.
-   - Link to `https://wa.me/254704025070`.
-   - Keep the existing Call and Email buttons.
-
-3. Verify click/tap friendliness:
-   - Buttons have at least 44 × 44 px hit area.
-   - Clear hover/focus states.
-   - Adequate gap between buttons.
-
-4. Run `bun run build` to confirm no TypeScript or runtime errors.
-
-5. Verify in the desktop preview that both header buttons open the correct actions (Call via `tel:` and WhatsApp via `wa.me`).
-
-## Notes
-- The WhatsApp number reuses the existing exported `PHONE` constant, formatted as `254704025070` for `wa.me`.
-- No mobile layout changes; mobile visitors keep the sticky bottom Call/WhatsApp bar.
-- No changes to structured data or SEO metadata are required.
+## Technical notes
+- The map relies on `VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY` and `VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID`, which are injected by the linked connector.
+- `ClientOnly` is the standard TanStack Start guard for browser-only libraries; do not statically import the map component into SSR.
