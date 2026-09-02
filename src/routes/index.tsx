@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Menu,
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 import { HazardStripe, Eyebrow } from "@/components/site/Hazard";
-import { RadiusDiagram } from "@/components/site/RadiusDiagram";
+import { GoogleMap } from "@/components/site/GoogleMap";
 import logoAsset from "@/assets/logo.png.asset.json";
 import heroYard from "@/assets/hero-yard.jpg";
 import bayBuilding from "@/assets/bay-building.jpg";
@@ -624,7 +624,17 @@ function Index() {
             </div>
 
             <div className="rivets border-2 border-ink/15 bg-background p-6 sm:p-8">
-              <RadiusDiagram />
+              <div className="h-[400px]">
+                <ClientOnly
+                  fallback={
+                    <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-muted-foreground">
+                      Loading map…
+                    </div>
+                  }
+                >
+                  <GoogleMap />
+                </ClientOnly>
+              </div>
             </div>
           </div>
         </section>
