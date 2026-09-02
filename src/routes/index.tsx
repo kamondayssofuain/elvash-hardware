@@ -624,7 +624,17 @@ function Index() {
             </div>
 
             <div className="rivets border-2 border-ink/15 bg-background p-6 sm:p-8">
-              <RadiusDiagram />
+              <div className="h-[400px]">
+                <ClientOnly
+                  fallback={
+                    <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-muted-foreground">
+                      Loading map…
+                    </div>
+                  }
+                >
+                  <GoogleMap />
+                </ClientOnly>
+              </div>
             </div>
           </div>
         </section>
